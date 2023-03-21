@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.FirstFragment">
+
+        <ImageView
+            android:id="@+id/ivInternet"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            app:layout_constraintBottom_toTopOf="@id/body"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/body"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btnBai3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bai 4" />
+
+            <Button
+                android:id="@+id/btnLoadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Load Image" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivLoadInternet"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/body" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

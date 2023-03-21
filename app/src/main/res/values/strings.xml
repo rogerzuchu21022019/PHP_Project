@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PHP_Project</string>
+    <string name="require">Require</string>
+    <string name="login">Login</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="forgot_title1">Don\'t worry it happens. Please enter the</string>
+    <string name="forgot_title2">address associated with your account</string>
+</resources>
