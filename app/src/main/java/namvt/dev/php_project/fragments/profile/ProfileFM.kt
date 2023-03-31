@@ -1,4 +1,4 @@
-package namvt.dev.php_project.fragments.home
+package namvt.dev.php_project.fragments.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,26 +8,35 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import namvt.dev.php_project.R
+import namvt.dev.php_project.databinding.FmProfileBinding
 
-import namvt.dev.php_project.databinding.FmHomeBinding
+class ProfileFM : Fragment() {
+    private lateinit var binding: FmProfileBinding
 
-class HomeFm : Fragment() {
-    private lateinit var binding: FmHomeBinding
-
-    lateinit var navController:NavController
-
+    lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FmHomeBinding.inflate(layoutInflater)
+        binding = FmProfileBinding.inflate(layoutInflater)
         navController = requireActivity().findNavController(R.id.fmNavHostGraph)
         setupSmoothBottomMenu()
+        clickButton();
         return binding.root
     }
+
+    private fun clickButton() {
+        binding.btnSignOut.apply {
+            setOnClickListener {
+                val action = ProfileFMDirections.actionProfileFmToSignInFm()
+                findNavController().navigate(action)
+            }
+        }
+    }
+
+
 
     private fun setupSmoothBottomMenu() {
         val popupMenu = PopupMenu(requireActivity().applicationContext,null)
@@ -35,7 +44,6 @@ class HomeFm : Fragment() {
         val menu = popupMenu.menu
         binding.navBot.setupWithNavController(menu, navController)
     }
-
 
 
 

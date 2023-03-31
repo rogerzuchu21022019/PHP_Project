@@ -10,8 +10,8 @@ class API {
 
     companion object{
 //        views/index.php?a=1
-//        private val baseURL = "http://10.0.2.2:8000/"
-        private val baseURL = "http://172.20.10.2:8000/"
+        private val baseURL = "http://10.0.2.2:8000/"
+//        private val baseURL = "http://172.20.10.2:8000/"
         private val client = OkHttpClient.Builder().build()
         val gson = GsonBuilder()
             .setLenient()

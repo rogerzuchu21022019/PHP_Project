@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/signInFm">
+    <!--<navigation xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:id="@+id/nav_graph"-->
+    <!--    app:startDestination="@id/firstFragment">-->
 
     <fragment
         android:id="@+id/firstFragment"
@@ -38,15 +44,15 @@
         android:label="FourthFragment"
         tools:layout="@layout/fm_fourth" />
     <fragment
-        tools:layout="@layout/fm_forgot_password"
         android:id="@+id/forgotPasswordFm"
         android:name="namvt.dev.php_project.fragments.forgotPassword.ForgotPasswordFm"
-        android:label="ForgotPasswordFm" />
+        android:label="ForgotPasswordFm"
+        tools:layout="@layout/fm_forgot_password" />
     <fragment
         android:id="@+id/signInFm"
         android:name="namvt.dev.php_project.fragments.signIn.SignInFm"
         android:label="SignInFm"
-        tools:layout="@layout/fm_sign_in" >
+        tools:layout="@layout/fm_sign_in">
         <action
             android:id="@+id/action_signInFm_to_signUpFm"
             app:destination="@id/signUpFm" />
@@ -61,7 +67,7 @@
         android:id="@+id/signUpFm"
         android:name="namvt.dev.php_project.fragments.signUp.SignUpFm"
         android:label="SignUpFm"
-        tools:layout="@layout/fm_sign_up" >
+        tools:layout="@layout/fm_sign_up">
         <action
             android:id="@+id/action_signUpFm_to_signInFm"
             app:destination="@id/signInFm" />
@@ -73,9 +79,22 @@
     <fragment
         android:id="@+id/homeFm"
         android:name="namvt.dev.php_project.fragments.home.HomeFm"
-        android:label="HomeFm" >
+        android:label="HomeFm"
+        tools:layout="@layout/fm_home">
         <action
             android:id="@+id/action_homeFm_to_signInFm"
+            app:destination="@id/signInFm" />
+        <action
+            android:id="@+id/action_homeFm_to_fmProfile"
+            app:destination="@id/profileFm" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFm"
+        android:name="namvt.dev.php_project.fragments.profile.ProfileFM"
+        android:label="fmProfile"
+        tools:layout="@layout/fm_profile">
+        <action
+            android:id="@+id/action_profileFm_to_signInFm"
             app:destination="@id/signInFm" />
     </fragment>
 </navigation>

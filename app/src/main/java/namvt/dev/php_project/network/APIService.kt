@@ -2,6 +2,9 @@ package namvt.dev.php_project.network
 
 import namvt.dev.php_project.models.Post
 import namvt.dev.php_project.models.Result
+import namvt.dev.php_project.models.categories.ResponseCate
+import namvt.dev.php_project.models.users.ResponseUser
+import namvt.dev.php_project.models.users.User
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Response
@@ -16,6 +19,7 @@ import retrofit2.http.Query
 
 interface APIService {
     // TODO: http://127.0.0.1:8000/views/tinh-toan-get.php?a=4&b=-3&c=-1
+
 
     @GET("views/tinh-toan-get.php")
     suspend fun getResult(
@@ -33,4 +37,25 @@ interface APIService {
         @Body methodPost: Post
     ):Response<Result>
 
+
+    // TODO http://localhost:8000/views/api/user/sign-in.php
+    //  => API SignIn
+    //  => Method POST
+    //  => BODY TYPE : Email Password
+
+    @Headers("Content-Type: application/json")
+    @POST("views/api/user/sign-in.php")
+    suspend fun signIn(
+        @Body user: User
+    ):Response<ResponseUser>
+
+    // TODO http://localhost:8000/views/api/user/sign-up.php
+    //  => API SignUp
+    //  => Method POST
+    //  => BODY TYPE : Email Password
+    @Headers("Content-Type: application/json")
+    @POST("views/api/user/sign-up.php")
+    suspend fun signUp(
+        @Body user: User
+    ):Response<ResponseUser>
 }
