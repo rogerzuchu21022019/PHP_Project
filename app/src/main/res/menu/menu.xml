@@ -3,11 +3,10 @@
         <item
             android:id="@+id/homeFm"
             android:title="Home"
-            android:icon="@drawable/google"/>
+            android:icon="@drawable/home"/>
         <item
             android:id="@+id/profileFm"
             android:title="Profile"
-
-            android:icon="@drawable/facebook"/>
+            android:icon="@drawable/profile"/>
 
 </menu>

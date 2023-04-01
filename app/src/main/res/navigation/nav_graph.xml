@@ -87,6 +87,14 @@
         <action
             android:id="@+id/action_homeFm_to_fmProfile"
             app:destination="@id/profileFm" />
+        <action
+            android:id="@+id/action_homeFm_to_detailFM"
+            app:destination="@id/detailFM" />
+        <argument
+            android:name="user"
+            app:argType="namvt.dev.php_project.models.users.User"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/profileFm"
@@ -95,6 +103,63 @@
         tools:layout="@layout/fm_profile">
         <action
             android:id="@+id/action_profileFm_to_signInFm"
+            app:destination="@id/signInFm" />
+        <action
+            android:id="@+id/action_profileFm_to_addNewsFM"
+            app:destination="@id/addNewsFM" />
+        <action
+            android:id="@+id/action_profileFm_to_editNewsFM"
+            app:destination="@id/editNewsFM" />
+        <action
+            android:id="@+id/action_profileFm_to_updateProfileFM"
+            app:destination="@id/updateProfileFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFM"
+        android:name="namvt.dev.php_project.fragments.home.DetailFM"
+        android:label="DetailFM"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="news"
+            app:argType="namvt.dev.php_project.models.news.News" />
+        <action
+            android:id="@+id/action_detailFM_to_homeFm"
+            app:destination="@id/homeFm" />
+        <argument
+            android:name="user"
+            app:argType="namvt.dev.php_project.models.users.User" />
+        <argument
+            android:name="category"
+            app:argType="namvt.dev.php_project.models.categories.Category" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewsFM"
+        android:name="namvt.dev.php_project.fragments.add_news.AddNewsFM"
+        android:label="AddNewsFM"
+        tools:layout="@layout/fragment_add_news">
+        <action
+            android:id="@+id/action_addNewsFM_to_profileFm"
+            app:destination="@id/profileFm" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNewsFM"
+        tools:layout="@layout/fragment_edit_news"
+        android:name="namvt.dev.php_project.fragments.edit_profile.EditNewsFM"
+        android:label="EditNewsFM" >
+        <action
+            android:id="@+id/action_editNewsFM_to_profileFm"
+            app:destination="@id/profileFm" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFM"
+        tools:layout="@layout/fragment_update_profile"
+        android:name="namvt.dev.php_project.fragments.profile.UpdateProfileFM"
+        android:label="UpdateProfileFM" >
+        <action
+            android:id="@+id/action_updateProfileFM_to_profileFm"
+            app:destination="@id/profileFm" />
+        <action
+            android:id="@+id/action_updateProfileFM_to_signInFm"
             app:destination="@id/signInFm" />
     </fragment>
 </navigation>

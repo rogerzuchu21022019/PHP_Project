@@ -28,9 +28,23 @@ class ProfileFM : Fragment() {
     }
 
     private fun clickButton() {
-        binding.btnSignOut.apply {
+        binding.btnWebsite.apply {
             setOnClickListener {
                 val action = ProfileFMDirections.actionProfileFmToSignInFm()
+                findNavController().navigate(action)
+            }
+        }
+
+        binding.btnEditProfile.apply {
+            setOnClickListener {
+                val action = ProfileFMDirections.actionProfileFmToUpdateProfileFM()
+                findNavController().navigate(action)
+            }
+        }
+
+        binding.btnAddNews.apply {
+            setOnClickListener {
+                val action = ProfileFMDirections.actionProfileFmToAddNewsFM()
                 findNavController().navigate(action)
             }
         }

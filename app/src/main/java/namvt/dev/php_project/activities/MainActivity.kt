@@ -3,17 +3,21 @@ package namvt.dev.php_project.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.PopupMenu
+import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import namvt.dev.php_project.R
 import namvt.dev.php_project.databinding.ActivityMainBinding
+import namvt.dev.php_project.models.users.UserViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
     lateinit var appBarConfiguration: AppBarConfiguration
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -26,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFm,
             )
         )
+
 
 //        setupSmoothBottomMenu()
 
